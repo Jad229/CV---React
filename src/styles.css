@@ -1,0 +1,88 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 10px 15px;
+  border-bottom: 7px solid rgba(6, 77, 168, 1);
+}
+
+.resume {
+  margin: auto;
+  max-width: 900px;
+  box-shadow: 2px 5px 10px 2px #808080;
+}
+/*===============================*/
+/*          Header Styles        */
+/*===============================*/
+
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border-bottom: 3px solid rgba(6, 77, 168, 1);
+}
+
+.header--name,
+.header--title {
+  width: 100%;
+  text-align: center;
+}
+
+.header--name {
+  padding-top: 15px;
+}
+
+.header--title-container {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(6, 77, 168, 1) 25%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+  padding: 2px;
+}
+
+.header--contact {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header--contact-detail {
+  margin: 0;
+  padding-block: 2px;
+  color: rgba(6, 77, 168, 1);
+}
+
+/*===============================*/
+/*       Education Styles        */
+/*===============================*/
+.education {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.education--degree,
+.education--university {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.education--degree-date,
+.education--university-location {
+  font-weight: 400;
+}
+
+.education--details {
+  padding-left: 5%;
+}
+
+.education--details li span {
+  font-weight: 700;
+}
