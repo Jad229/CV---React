@@ -1,4 +1,54 @@
+import { useState } from "react";
+import EditForm from "./EditForm";
+
 export default function Education() {
+  const [inputs, setInputs] = useState([
+    {
+      value: "",
+      type: "text",
+      name: "degree",
+    },
+    {
+      value: "",
+      type: "text",
+      name: "date",
+    },
+    {
+      value: "",
+      type: "text",
+      name: "university",
+    },
+    {
+      value: "",
+      type: "text",
+      name: "location",
+    },
+  ]);
+
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setInputs((prevInputs) => {
+      return prevInputs.map((input) =>
+        input.name === name
+          ? {
+              ...input,
+              [name]: value,
+            }
+          : input
+      );
+    });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(inputs);
+  }
+
+  function toggleForm() {
+    setIsFormOpen((prevState) => !prevState);
+  }
   return (
     <section className="education">
       <h3 className="education--title">EDUCATION</h3>
@@ -23,6 +73,21 @@ export default function Education() {
           <span>Awards</span>
         </li>
       </ul>
+
+      {isFormOpen && (
+        <EditForm
+          inputs={inputs}
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          toggleForm={toggleForm}
+        />
+      )}
+
+      {!isFormOpen && (
+        <button className="edit--button" onClick={toggleForm}>
+          EDIT
+        </button>
+      )}
     </section>
   );
 }

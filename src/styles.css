@@ -5,15 +5,55 @@
 }
 
 section {
+  position: relative;
   padding: 10px 15px;
   border-bottom: 7px solid rgba(6, 77, 168, 1);
 }
 
 .resume {
+  padding-inline: 15px;
   margin: auto;
   max-width: 900px;
   box-shadow: 2px 5px 10px 2px #808080;
 }
+
+/*===============================*/
+/*            Form Styles        */
+/*===============================*/
+
+.edit--form {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  z-index: 50;
+  padding: 20px;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgb(46, 133, 155);
+}
+
+/*===============================*/
+/*          Button Styles        */
+/*===============================*/
+
+.edit--button,
+.form-buttons {
+  margin-inline: 5px;
+  padding: 10px 15px;
+  background: rgb(68, 167, 248);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.edit--button {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+}
+
 /*===============================*/
 /*          Header Styles        */
 /*===============================*/
