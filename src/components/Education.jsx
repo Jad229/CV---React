@@ -4,22 +4,22 @@ import EditForm from "./EditForm";
 export default function Education() {
   const [inputs, setInputs] = useState([
     {
-      value: "",
+      value: "Awesome Degree",
       type: "text",
       name: "degree",
     },
     {
-      value: "",
+      value: "May 2023",
       type: "text",
       name: "date",
     },
     {
-      value: "",
+      value: "NJIT",
       type: "text",
       name: "university",
     },
     {
-      value: "",
+      value: "Newark, NJ",
       type: "text",
       name: "location",
     },
@@ -29,16 +29,11 @@ export default function Education() {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setInputs((prevInputs) => {
-      return prevInputs.map((input) =>
-        input.name === name
-          ? {
-              ...input,
-              [name]: value,
-            }
-          : input
-      );
-    });
+    setInputs((prevInputs) =>
+      prevInputs.map((input) =>
+        input.name === name ? { ...input, value } : input
+      )
+    );
   }
 
   function handleSubmit(event) {
@@ -53,13 +48,19 @@ export default function Education() {
     <section className="education">
       <h3 className="education--title">EDUCATION</h3>
       <div className="education--degree">
-        <h4 className="education--degree-name">[Degree Here]</h4>
-        <h4 className="education--degree-date">[Date]</h4>
+        <h4 className="education--degree-name">
+          {inputs.find((input) => input.name === "degree").value}
+        </h4>
+        <h4 className="education--degree-date">
+          {inputs.find((input) => input.name === "date").value}
+        </h4>
       </div>
       <div className="education--university">
-        <h4 className="education--university-name">[University here]</h4>
+        <h4 className="education--university-name">
+          {inputs.find((input) => input.name === "university").value}
+        </h4>
         <h4 className="education--university-location">
-          [University Location here]
+          {inputs.find((input) => input.name === "location").value}
         </h4>
       </div>
       <ul className="education--details">

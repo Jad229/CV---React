@@ -14,16 +14,11 @@ export default function Summary() {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setInputs((prevInputs) => {
-      return prevInputs.map((input) =>
-        input.name === name
-          ? {
-              ...input,
-              [name]: value,
-            }
-          : input
-      );
-    });
+    setInputs((prevInputs) =>
+      prevInputs.map((input) =>
+        input.name === name ? { ...input, value } : input
+      )
+    );
   }
 
   function handleSubmit(event) {

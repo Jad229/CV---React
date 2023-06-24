@@ -7,30 +7,32 @@ export default function EditForm({
   const inputElements = inputs.map((input, idx) => {
     if (input.type === "textarea") {
       return (
-        <textarea
-          key={idx}
-          name={input.name}
-          value={input.value}
-          onChange={handleChange}
-          placeholder={`Type ${input.name} here`}
-        />
+        <div className="edit--form-input-container" key={idx}>
+          <label className="edit--form-labels" htmlFor={input.name}>
+            {input.name}:
+          </label>
+          <textarea
+            name={input.name}
+            value={input.value}
+            onChange={handleChange}
+            placeholder={`Type ${input.name} here`}
+          />
+        </div>
       );
     } else {
       return (
-        <>
+        <div className="edit--form-input-container" key={idx}>
           <label className="edit--form-labels" htmlFor={input.name}>
-            {input.name}
+            {input.name}:
           </label>
           <input
             className="edit--form-inputs"
-            key={idx}
             name={input.name}
             type={input.type}
             value={input.value}
             onChange={handleChange}
-            placeholder={input.name}
           />
-        </>
+        </div>
       );
     }
   });
