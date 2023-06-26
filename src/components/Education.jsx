@@ -7,6 +7,7 @@ export default function Education() {
     university: "",
     location: "",
   });
+
   const [educationArr, setEducationArr] = useState([
     {
       degree: "B.S Engineering Technology, Computer Technology",
@@ -16,6 +17,7 @@ export default function Education() {
     },
   ]);
 
+  console.log(educationArr);
   const educationBlocks = educationArr.map((education, idx) => {
     return (
       <div key={idx}>
@@ -42,8 +44,11 @@ export default function Education() {
         [name]: value,
       };
     });
+  }
 
-    console.log(formData);
+  function handleSubmit(event) {
+    event.preventDefault();
+    setEducationArr((prevArray) => [...prevArray, formData]);
   }
 
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -56,40 +61,38 @@ export default function Education() {
       <h3 className="education--title">EDUCATION</h3>
       {educationBlocks}
       {isFormOpen && (
-        <form className="edit--form">
-          <div className="edit--form-buttons">
-            <input
-              type="text"
-              placeholder="Degree title"
-              name="degree"
-              value={formData.degree}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              placeholder="Degree Date"
-              name="date"
-              value={formData.date}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              placeholder="University Name"
-              name="university"
-              value={formData.university}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              placeholder="University Location"
-              name="location"
-              value={formData.location}
-              onChange={handleChange}
-            />
+        <form onSubmit={handleSubmit} className="edit--form">
+          <input
+            type="text"
+            placeholder="Degree title"
+            name="degree"
+            value={formData.degree}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="Degree Date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="University Name"
+            name="university"
+            value={formData.university}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="University Location"
+            name="location"
+            value={formData.location}
+            onChange={handleChange}
+          />
 
-            <button className="form-buttons" onClick={toggleForm}>
-              ADD
-            </button>
+          <div className="edit--form-buttons">
+            <button className="form-buttons">ADD</button>
             <button className="form-buttons" onClick={toggleForm}>
               CLOSE
             </button>
