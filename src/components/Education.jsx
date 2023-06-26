@@ -21,15 +21,13 @@ export default function Education() {
   const educationBlocks = educationArr.map((education, idx) => {
     return (
       <div key={idx}>
-        <div className="education--degree">
-          <h4 className="education--degree-name">{education.degree}</h4>
-          <h4 className="education--degree-date">{education.date}</h4>
+        <div className="details">
+          <h4 className="details--title">{education.degree}</h4>
+          <h4 className="details--date">{education.date}</h4>
         </div>
-        <div className="education--university">
-          <h4 className="education--university-name">{education.university}</h4>
-          <h4 className="education--university-location">
-            {education.location}
-          </h4>
+        <div className="details--organization">
+          <h4 className="details--organization-name">{education.university}</h4>
+          <h4 className="details--location">{education.location}</h4>
         </div>
       </div>
     );

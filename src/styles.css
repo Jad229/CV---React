@@ -118,28 +118,16 @@ section {
 /*===============================*/
 /*       Education Styles        */
 /*===============================*/
-.education {
+.education,
+.experience {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.education--degree,
-.education--university {
+.details,
+.details--organization {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.education--degree-date,
-.education--university-location {
-  font-weight: 400;
-}
-
-.education--details {
-  padding-left: 5%;
-}
-
-.education--details li span {
-  font-weight: 700;
 }
