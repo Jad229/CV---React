@@ -1,9 +1,8 @@
-import Header from "./components/Header";
-import Summary from "./components/Summary";
-import Skills from "./components/Skills";
 import Education from "./components/Education";
-import Project from "./components/Project";
 import Experience from "./components/Experience";
+import Header from "./components/Header";
+import Skills from "./components/Skills";
+import Summary from "./components/Summary";
 function App() {
   return (
     <div className="resume">
@@ -11,7 +10,6 @@ function App() {
       <Summary />
       <Skills />
       <Education />
-      <Project />
       <Experience />
     </div>
   );
